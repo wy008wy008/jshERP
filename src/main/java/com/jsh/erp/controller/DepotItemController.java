@@ -335,13 +335,13 @@ public class DepotItemController {
                     objs[1] = diEx.getMStandard();
                     objs[2] = diEx.getMModel();
                     objs[3] = diEx.getMaterialUnit();
-                    objs[4] = diEx.getPurchaseDecimal().toString();
+                    objs[4] = diEx.getPurchaseDecimal() == null ? "0" : diEx.getPurchaseDecimal().toString();
                     objs[5] = depotItemService.getStockByParam(depotId,mId,null,timeA,tenantId).toString();
                     objs[6] = depotItemService.getInNumByParam(depotId,mId,timeA,timeB,tenantId).toString();
                     objs[7] = depotItemService.getOutNumByParam(depotId,mId,timeA,timeB,tenantId).toString();
                     BigDecimal thisSum = depotItemService.getStockByParam(depotId,mId,null,timeB,tenantId);
                     objs[8] = thisSum.toString();
-                    objs[9] = thisSum.multiply(diEx.getPurchaseDecimal()).toString();
+                    objs[9] = diEx.getPurchaseDecimal() == null ? "0" : thisSum.multiply(diEx.getPurchaseDecimal()).toString();
                     objects.add(objs);
                 }
             }

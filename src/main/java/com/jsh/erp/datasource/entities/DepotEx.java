@@ -19,4 +19,27 @@ public class DepotEx extends Depot{
 
     private BigDecimal currentStock;
 
+    public String getPrincipalName() {
+        return principalName;
+    }
+
+    public void setPrincipalName(String principalName) {
+        this.principalName = principalName;
+    }
+
+    public BigDecimal getInitStock() {
+        return initStock;
+    }
+
+    public void setInitStock(BigDecimal initStock) {
+        this.initStock = initStock;
+    }
+
+    public BigDecimal getCurrentStock() {
+        return currentStock;
+    }
+
+    public void setCurrentStock(BigDecimal currentStock) {
+        this.currentStock = currentStock;
+    }
 }
